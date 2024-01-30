@@ -14,6 +14,11 @@ export class FetchApiDataService {
   constructor(private http: HttpClient) { }
 
   
+    /**
+   * Making the api call for the user registration endpoint
+   * @param userDetails 
+   * @returns an observable with the user
+   */
   public userRegistration(userDetails: any): Observable<any> {
     return this.http.post(apiUrl + 'users', userDetails).pipe(
       catchError(this.handleError)
