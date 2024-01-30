@@ -10,4 +10,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'myFlix-Angular-client';
 
+  RegisterUser() {
+    // Implement the logic for opening the user registration dialog
+  }
+
 }
+
