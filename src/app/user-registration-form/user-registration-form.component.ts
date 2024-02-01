@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-registration-form',
   templateUrl: './user-registration-form.component.html',
-  styleUrls: ['user-registration-form.component.scss']
+  styleUrls: ['./user-registration-form.component.scss'],
 })
 export class UserRegistrationFormComponent implements OnInit {
 
@@ -36,6 +36,7 @@ registerUser(): void {
         this.router.navigate(['movies']);
       })
     }, (response) => {
+      console.log(response);
       this.snackBar.open(response, 'OK', {
         duration: 2000
       });

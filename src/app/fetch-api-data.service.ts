@@ -110,6 +110,18 @@ export class FetchApiDataService {
     );
   }
 
+  getUser(userName: string): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http
+      .get(apiUrl + 'users/' + userName, {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token,
+        }),
+      })
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
+  }
+
+
   editUser(updatedUser: any): Observable<any> {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
